@@ -30,7 +30,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
 
  
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      ( session) => {
         setIsAuthenticated(!!session);
         if (!session) {
           navigate('/auth');
