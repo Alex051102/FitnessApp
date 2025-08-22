@@ -1,0 +1,22 @@
+.bottom-nav__list{
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #162B46;
+}
+
+.bottom-nav__item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.bottom-nav__item-text{
+    color: #828B98;
+    font-size: 12px;
+}
+.bottom-nav__item svg{
+    height: 22px;
+    width: 22px;
+}

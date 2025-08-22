@@ -3,15 +3,16 @@ import './App.css'
 import { AuthPage } from './pages/AuthPage/AuthPage'
 import { useState, useEffect } from 'react'
 import Home from './pages/Home/Home'
-/* import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute' */
+
 import { supabase } from './services/supabaseClient'
+import BottomNav from './components/common/BottomNav/BottomNav'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Проверяем текущую сессию при загрузке
+   
     const checkSession = async () => {
       try {
         const { data: { session } } = await supabase.auth.getSession()
@@ -26,7 +27,7 @@ function App() {
 
     checkSession()
 
-    // Слушаем изменения авторизации
+    
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         setIsAuthenticated(!!session)
@@ -36,7 +37,7 @@ function App() {
     return () => subscription.unsubscribe()
   }, [])
 
-  // Показываем заглушку во время загрузки
+  
   if (loading) {
     return (
       <div style={{maxWidth:'450px',minHeight:'660px',border:"1px solid black"}} className="app">
@@ -48,7 +49,7 @@ function App() {
   return (
     <div style={{maxWidth:'450px',minHeight:'660px',border:"1px solid black"}} className="app">
       <Routes>
-        {/* Если авторизован - показываем Home, если нет - перенаправляем на auth */}
+       
         <Route 
           path="/" 
           element={
@@ -58,7 +59,7 @@ function App() {
           } 
         />
         
-        {/* Если не авторизован - показываем AuthPage, если авторизован - перенаправляем на главную */}
+       
         <Route 
           path="/auth" 
           element={
@@ -68,9 +69,10 @@ function App() {
           } 
         />
         
-        {/* Все остальные пути перенаправляем на главную */}
+       
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <BottomNav></BottomNav>
     </div>
   )
 }
