@@ -1,0 +1,78 @@
+.home{
+    height: calc(100vh - 65px);
+    background-color: #0A233F;
+}
+.home__container{
+    display: grid;
+    grid-template-rows: 2fr 2fr 8fr;
+    padding: 15px;
+    padding-top: 40px;
+    height: 100%;
+}
+.home__welcome{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+.home__welcome-text{
+    font-size: 36px;
+    color: white;
+    line-height: 1;
+}
+.home__welcome-text-name{
+    font-size: 24px;
+    color: white;
+}
+.home__time{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.home__time-block{
+   background-color: #162B46;
+   border-radius: 10px;
+   width: 100%;
+}
+.home__time-block-container{
+    width: 100%;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+ 
+}
+
+.home__time-block-text{
+    font-size: 24px;
+    color: white;
+}
+.home__time-block-text--grey{
+    color: grey;
+    font-size: 18px;
+}
+.home__notification{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.home__notification-container{
+    width: 100%;
+    padding: 25px 15px;
+    border-radius: 20px;
+    background-color: #00D8FF;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.home__notification-text{
+    font-size: 12px;
+
+}
+.home__notification-text--big{
+    font-size: 24px;
+    font-weight: bold;
+}
