@@ -6,6 +6,7 @@ import Home from './pages/Home/Home'
 
 import { supabase } from './services/supabaseClient'
 import BottomNav from './components/common/BottomNav/BottomNav'
+import Trainings from './pages/Trainings/Trainings'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
@@ -55,6 +56,14 @@ function App() {
           element={
             isAuthenticated ? 
               <Home /> : 
+              <Navigate to="/auth" replace />
+          } 
+        />
+        <Route 
+          path="/trainings" 
+          element={
+            isAuthenticated ? 
+              <Trainings></Trainings> : 
               <Navigate to="/auth" replace />
           } 
         />
