@@ -22,9 +22,11 @@ export interface Training {
   trainer_data:UserProfile
 }
 type Props={
-   date:number[]
+   date:number[],
+setterModalJoin:(bool:boolean)=>void;
+  setterTrainingId:(id:string)=>void;
 }
-export default function TodayShedule({date}:Props) {
+export default function TodayShedule({date,setterModalJoin,setterTrainingId}:Props) {
   const [trainings, setTrainings] = useState<Training[]>([])
   const getAllTrainings = async (): Promise<Training[]> => {
   try {
@@ -81,7 +83,7 @@ export default function TodayShedule({date}:Props) {
           <div className="today-shedule__list">
             {trainings.map(tr=>(
               normalizeDate()==tr.date?
-<div className="today-shedule__list-item">
+<div onClick={()=>{setterModalJoin(true);setterTrainingId(tr.id)}} className="today-shedule__list-item">
               <p className='today-shedule__list-item-time'>{tr.start_time}</p>
               <div className="today-shedule__list-item-info">
                 <div className="today-shedule__list-item-name">

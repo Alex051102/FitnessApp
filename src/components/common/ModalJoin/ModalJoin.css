@@ -1,0 +1,66 @@
+.modal-join-outer{
+    height: 100vh;width: 100%;position: absolute;bottom: 1px;display: flex;align-items: end;
+}
+.modal-join{
+   
+    bottom: 1px;left: 1px;
+   background-color: #3B4A5B;
+    width: 100%;border-top-left-radius: 20px;border-top-right-radius: 20px;
+}
+.modal-join__container{
+    padding: 50px 40px;display: flex;flex-direction: column;gap: 20px;
+}
+.modal-join__nav{
+    display: grid;grid-template-columns: repeat(2,1fr);
+}
+.exit-outer{
+    display: flex;
+    justify-content: end;
+}
+.exit{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+}
+.modal-join__title{
+    font-size: 18px;
+    color: white;
+    
+}
+.modal-join__info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal-join__info-item{
+    display: flex;align-items: center;gap: 20px;
+
+}
+.modal-join__info-item-text{
+    color: white;width: 110px;
+    
+}
+
+.modal-join__button{
+    display: flex;
+    justify-content:end;
+}
+.modal-join__button-container{
+    background-color: #00D8FF;
+    padding: 15px 25px;border-radius: 10px;
+    color: black;
+
+}
+.modal-join__info-item-number{
+    display: flex;align-items: center;
+    gap: 5px;
+
+}
+.modal-join__info-item-number-action{
+    background-color: red;width: 25px;height: 25px;display: flex;justify-content: center;align-items: center;
+}
+
+.modal-join__info-item-number-text{
+    color: white;font-size: 18px;
+}

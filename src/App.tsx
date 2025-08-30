@@ -9,6 +9,7 @@ import BottomNav from './components/common/BottomNav/BottomNav'
 import Trainings from './pages/Trainings/Trainings'
 import ShedulePage from './pages/ShedulePage/ShedulePage'
 import ModalAdd from './components/common/ModalAdd/ModalAdd'
+import ModalJoin from './components/common/ModalJoin/ModalJoin'
 type UserProfile = {
   user_id: string
   email: string
@@ -19,7 +20,9 @@ type UserProfile = {
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
   const [loading, setLoading] = useState(true)
-const [modalAdd,setModalAdd]=useState(true)
+const [modalAdd,setModalAdd]=useState(false)
+const [modalJoin,setModalJoin]=useState(false)
+const [clickedTraining,setClickedTraining]=useState('')
 const [date,setDate]=useState([0,1])
   const [currentUser,setCurrentUser]=useState<UserProfile>({
   user_id: '',
@@ -68,13 +71,20 @@ const [date,setDate]=useState([0,1])
 function setterModal(bool:boolean){
 setModalAdd(bool)
 }
+function setterModalJoin(bool:boolean){
+setModalJoin(bool)
+}
 function setterDate(day:number,month:number){
 setDate([day,month])
+}
+function setterTrainingId(id:string){
+setClickedTraining(id)
 }
   return (
     <div style={{maxWidth:'450px',minHeight:'660px',border:"1px solid black",position:"relative"}} className="app">
       
       {modalAdd==true?<ModalAdd currentUser={currentUser} date={date} setterModal={setterModal}></ModalAdd>:""}
+      {modalJoin==true?<ModalJoin clickedTraining={clickedTraining} setterModalJoin={setterModalJoin}></ModalJoin>:""}
       <Routes>
        
         <Route 
@@ -106,7 +116,7 @@ setDate([day,month])
         <Route 
           path="/shedule" 
           element={
-            isAuthenticated ? <ShedulePage date={date} setterDate={setterDate} setterModal={setterModal}></ShedulePage>
+            isAuthenticated ? <ShedulePage setterTrainingId={setterTrainingId} setterModalJoin={setterModalJoin} currentUser={currentUser} date={date} setterDate={setterDate} setterModal={setterModal}></ShedulePage>
                : <Navigate to="/" replace />
               
           } 
