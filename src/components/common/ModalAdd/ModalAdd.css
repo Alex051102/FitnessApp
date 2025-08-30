@@ -1,0 +1,85 @@
+.modal-add-outer{
+    height: 100vh;width: 100%;position: absolute;bottom: 1px;display: flex;align-items: end;
+}
+.modal-add{
+   
+    bottom: 1px;left: 1px;
+   background-color: #3B4A5B;
+    width: 100%;border-top-left-radius: 20px;border-top-right-radius: 20px;
+}
+.modal-add__container{
+    padding: 50px 20px;display: flex;flex-direction: column;gap: 20px;
+}
+.modal-add__nav{
+    display: grid;grid-template-columns: repeat(2,1fr);
+}
+.exit-outer{
+    display: flex;
+    justify-content: end;
+}
+.exit{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+}
+.modal-add__title{
+    font-size: 18px;
+    color: white;
+    
+}
+.modal-add__info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal-add__info-item{
+    display: flex;align-items: center;gap: 20px;
+
+}
+.modal-add__info-item-text{
+    color: white;width: 150px;
+    
+}
+.modal-add__info-item-time-all{
+    display: flex;align-items: center;gap: 20px;
+
+}
+.modal-add__info-item-time{
+    display: flex;align-items: center;
+    gap: 6px;
+}
+.modal-add__info-item-time-input{
+    font-size: 32px;color: white;width: 35px;border-bottom: 1px solid white;text-align: center;
+}
+.modal-add__info-item-time-end{
+    color: white;font-size: 20px;
+}
+
+.modal-add__info-item-input{
+   color: white;border-bottom: 1px solid white;width: 40%;
+}
+.modal-add__button{
+    display: flex;
+    justify-content:end;
+}
+.modal-add__button-container{
+    background-color: #00D8FF;
+    padding: 15px 25px;border-radius: 10px;
+    color: black;
+
+}
+.modal-add__info-item-number{
+    display: flex;align-items: center;
+    gap: 5px;
+
+}
+.modal-add__info-item-number-action{
+    background-color: red;width: 25px;height: 25px;display: flex;justify-content: center;align-items: center;
+}
+.modal-add__info-item-number-action-text{
+    
+}
+.modal-add__info-item-number-text{
+    color: white;font-size: 18px;
+}

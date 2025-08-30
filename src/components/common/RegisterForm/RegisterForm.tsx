@@ -3,12 +3,21 @@ import { supabase } from '../../../services/supabaseClient'
 
 import intro from '../../../assets/images/intro.svg'
 import './RegisterForm.css'
+type UserProfile = {
+  user_id: string
+  email: string
+  full_name: string
+  role: 'user' | 'trainer'
+  created_at?: string
+}
+
 type Props = {
   swapeWindow: (bool:boolean) => void
   setterContent :(bool:boolean) => void
+  userDataSetter : (data :UserProfile)=>void
 }
 
-export function RegisterForm({ swapeWindow,setterContent }: Props) {
+export function RegisterForm({ swapeWindow,setterContent,userDataSetter }: Props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [fullName, setFullName] = useState('')
@@ -47,7 +56,15 @@ export function RegisterForm({ swapeWindow,setterContent }: Props) {
           },
           { onConflict: 'user_id' }
         )
-
+        if(data.user.email!=undefined){
+userDataSetter({
+            user_id: data.user.id,
+            email: data.user.email,
+            full_name: fullName,
+            role
+          },)
+        }
+        
       if (profileError) {
         console.error('Ошибка upsert профиля:', profileError)
         

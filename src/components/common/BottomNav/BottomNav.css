@@ -2,7 +2,8 @@
     padding: 10px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: #0A233F;
+    background-color: #162B46;
+    border-top: 1px solid grey;
 }
 
 .bottom-nav__item{

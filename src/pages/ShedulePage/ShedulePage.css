@@ -1,0 +1,17 @@
+.shedule-page{
+     height: calc(100vh - 65px);
+    background-color: #0A233F;
+}
+.shedule-page__container{
+    padding-top: 40px;
+   display: flex;flex-direction: column;
+}
+.shedule-page__add{
+    display: flex;
+    justify-content: end;padding: 0 10px;
+}
+.shedule-page__add-button{
+    width: 30px;
+    height: 31px;
+    display: flex;justify-content: center;align-items: center;background-color: #3B4A5B;
+}

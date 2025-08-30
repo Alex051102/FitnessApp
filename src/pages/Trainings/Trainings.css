@@ -22,9 +22,17 @@
     border: 1px solid #00D8FF;
 
 }
+.trainings__nav-item--current{
+    background-color: #00D8FF;
+    border-radius: 10px;
+}
+
 .trainings__nav-item-text{
     padding: 10px;
     color: white;
+}
+.trainings__nav-item-text--current{
+    color:black;
 }
 .trainings__filters{
      display: flex;
@@ -33,7 +41,8 @@
     min-height: 60px;
 }
 .trainings__filters-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: 15px;
     width: 100%;
   
@@ -42,7 +51,7 @@
     display: grid;
     justify-content: center;
       height: 42px;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1.5fr 5fr 1fr;
     align-items: center;
     background-color: #162B46;
 }
@@ -54,6 +63,13 @@
     display: flex;
     justify-content:center;
     align-items: center;
+}
+.trainings__filters-search-input{
+    font-size: 12px;
+}
+.trainings__filters-search-input:focus{
+    outline: none;
+    color: white;
 }
 .trainings__filters-sort{
       height: 42px;
@@ -68,10 +84,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 .trainings__filters-sort-text{
     color: #828B98;
+    font-size: 12px;
 }
 
 .trainings__list{

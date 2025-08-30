@@ -20,17 +20,17 @@ export default function Home({ content }: HomeProps) {
     checkAuth()
   }, [navigate])
 
-  /* const handleLogout = async () => {
+  const handleLogout = async () => {
     await supabase.auth.signOut()
    
-  } */
+  }
 
   return (
     <div>
       <div className="home">
         <div className="home__container">
           <div className="home__welcome">
-            <h2 className='home__welcome-text'>Welcome back,</h2>
+            <h2 onClick={handleLogout} className='home__welcome-text'>Welcome back,</h2>
             <p className='home__welcome-text-name'>Alex Pleskunin</p>
             
           </div>

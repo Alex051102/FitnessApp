@@ -1,0 +1,41 @@
+.today-shedule{
+    background-color: #162B46; height: calc((100vh - 40px - 65px - 410px));border-top-left-radius: 20px;border-top-right-radius: 20px;
+}
+.today-shedule__container{
+    padding: 30px 20px;display: flex;flex-direction: column;gap: 20px;height: 100%;
+}
+
+.today-shedule__title{
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+.today-shedule__list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;overflow-y: scroll;height: 100%;scrollbar-width: none; 
+    -ms-overflow-style: none; }
+.today-shedule__list-item{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+}
+.today-shedule__list-item-info{
+    display: flex;
+    gap: 10px;
+}
+.today-shedule__list-item-name{
+    border-right: 1px solid #828B98;
+}
+.today-shedule__list-item-name-text{
+    padding-right: 10px;
+}
+.today-shedule__list-item-time{
+    color: white;font-size: 14px;
+}
+.today-shedule__list-item-name-text{
+    color: white;font-size: 14px;
+}
+.today-shedule__list-item-training{
+    color: #828B98;
+    font-size: 14px;
+}

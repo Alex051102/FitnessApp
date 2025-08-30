@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './BottomNav.css'
 import { Link } from 'react-router-dom'
 export default function BottomNav() {
@@ -24,8 +24,7 @@ export default function BottomNav() {
 
                     <p className='bottom-nav__item-text'>Trainings</p>
                 </div></Link>
-               
-                <div className="bottom-nav__item">
+               <Link to='/shedule'><div className="bottom-nav__item">
                     
 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7222 20.7777C18.5326 20.7777 19.3098 20.4558 19.8828 19.8828C20.4559 19.3098 20.7778 18.5326 20.7778 17.7222C20.7778 16.9118 20.4559 16.1346 19.8828 15.5616C19.3098 14.9885 18.5326 14.6666 17.7222 14.6666C16.9119 14.6666 16.1347 14.9885 15.5616 15.5616C14.9886 16.1346 14.6667 16.9118 14.6667 17.7222C14.6667 18.5326 14.9886 19.3098 15.5616 19.8828C16.1347 20.4558 16.9119 20.7777 17.7222 20.7777ZM17.7222 22C18.8568 22 19.9448 21.5493 20.7471 20.747C21.5493 19.9448 22 18.8567 22 17.7222C22 16.5876 21.5493 15.4996 20.7471 14.6973C19.9448 13.8951 18.8568 13.4444 17.7222 13.4444C16.5877 13.4444 15.4996 13.8951 14.6974 14.6973C13.8952 15.4996 13.4445 16.5876 13.4445 17.7222C13.4445 18.8567 13.8952 19.9448 14.6974 20.747C15.4996 21.5493 16.5877 22 17.7222 22Z" fill="#828B98"/>
@@ -37,7 +36,8 @@ export default function BottomNav() {
 </svg>
 
                     <p className='bottom-nav__item-text'>Shedule</p>
-                </div>
+                </div></Link>
+                
                 <div className="bottom-nav__item">
                     
 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

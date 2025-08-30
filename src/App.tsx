@@ -7,11 +7,30 @@ import Home from './pages/Home/Home'
 import { supabase } from './services/supabaseClient'
 import BottomNav from './components/common/BottomNav/BottomNav'
 import Trainings from './pages/Trainings/Trainings'
-
+import ShedulePage from './pages/ShedulePage/ShedulePage'
+import ModalAdd from './components/common/ModalAdd/ModalAdd'
+type UserProfile = {
+  user_id: string
+  email: string
+  full_name: string
+  role: 'user' | 'trainer'
+  created_at?: string
+}
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
   const [loading, setLoading] = useState(true)
-
+const [modalAdd,setModalAdd]=useState(true)
+const [date,setDate]=useState([0,1])
+  const [currentUser,setCurrentUser]=useState<UserProfile>({
+  user_id: '',
+  email: '',
+  full_name: '',
+  role: 'user' ,
+  
+})
+  function userDataSetter(data:UserProfile){
+    setCurrentUser(data)
+  }
   useEffect(() => {
    
     const checkSession = async () => {
@@ -46,9 +65,16 @@ function App() {
       </div>
     )
   }
-
+function setterModal(bool:boolean){
+setModalAdd(bool)
+}
+function setterDate(day:number,month:number){
+setDate([day,month])
+}
   return (
-    <div style={{maxWidth:'450px',minHeight:'660px',border:"1px solid black"}} className="app">
+    <div style={{maxWidth:'450px',minHeight:'660px',border:"1px solid black",position:"relative"}} className="app">
+      
+      {modalAdd==true?<ModalAdd currentUser={currentUser} date={date} setterModal={setterModal}></ModalAdd>:""}
       <Routes>
        
         <Route 
@@ -63,7 +89,7 @@ function App() {
           path="/trainings" 
           element={
             isAuthenticated ? 
-              <Trainings></Trainings> : 
+              <Trainings currentUser={currentUser}></Trainings> : 
               <Navigate to="/auth" replace />
           } 
         />
@@ -74,10 +100,17 @@ function App() {
           element={
             isAuthenticated ? 
               <Navigate to="/" replace /> : 
-              <AuthPage setterContent={setIsAuthenticated} />
+              <AuthPage userDataSetter={userDataSetter} setterContent={setIsAuthenticated} />
           } 
         />
-        
+        <Route 
+          path="/shedule" 
+          element={
+            isAuthenticated ? <ShedulePage date={date} setterDate={setterDate} setterModal={setterModal}></ShedulePage>
+               : <Navigate to="/" replace />
+              
+          } 
+        />
        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
