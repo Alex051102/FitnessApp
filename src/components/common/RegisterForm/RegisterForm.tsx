@@ -57,6 +57,7 @@ export function RegisterForm({ swapeWindow,setterContent,userDataSetter }: Props
           { onConflict: 'user_id' }
         )
         if(data.user.email!=undefined){
+          localStorage.setItem('user_id',data.user.id)
 userDataSetter({
             user_id: data.user.id,
             email: data.user.email,

@@ -34,11 +34,11 @@ export default function ModalAdd({setterModal,date,currentUser}:Props) {
     const [training,setTraining]=useState('')
     const [participants,setParticipants]=useState(10)
     const hoursAndMinutesToTotalMinutes = (hoursStr: string, minutesStr: string): number => {
-  // Преобразуем строки в числа
+ 
   const hours = parseInt(hoursStr, 10);
   const minutes = parseInt(minutesStr, 10);
   
-  // Проверяем валидность входных данных
+  
   if (isNaN(hours) || isNaN(minutes)) {
     throw new Error('Часы и минуты должны быть числами');
   }
@@ -59,7 +59,7 @@ export default function ModalAdd({setterModal,date,currentUser}:Props) {
     const { data, error } = await supabase 
       .from('trainings')
       .insert([{
-        trainer_id: trainingData.trainer_id,
+        trainer_id: localStorage.getItem('user_id'),
         date: trainingData.date,
         start_time: trainingData.start_time,
         duration: trainingData.duration,
@@ -84,7 +84,7 @@ export default function ModalAdd({setterModal,date,currentUser}:Props) {
   }
 }
 function normalizeDate(){
-    // date[0] - день, date[1] - месяц (начиная с 0?)
+    
     const day = date[0] < 10 ? `0${date[0]}` : `${date[0]}`;
     const month = date[1] < 10 ? `0${date[1]}` : `${date[1]}`;
     return `${day}-${month}`;
